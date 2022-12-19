@@ -1,7 +1,7 @@
 # Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
 
-def rle_encode(data):
+def encode(data):
     encoding = ''
     prev_char = ''
     count = 1
@@ -19,7 +19,7 @@ def rle_encode(data):
         return encoding
 
 
-def rle_decode(data):
+def decode(data):
     decode = ''
     count = ''
     for char in data:
@@ -29,3 +29,21 @@ def rle_decode(data):
             decode += char * int(count)
             count = ''
     return decode
+
+with open('in_encode.txt','r') as file:
+    a = file.read()
+print (a)
+b = encode(a)
+print (b)
+with open('encode.txt','w') as file:
+    file.write(b)
+
+with open('in_decode.txt','r') as file:
+    a = file.read()
+print (a)
+b = decode(a)
+print (b)
+with open('decode.txt','w') as file:
+    file.write(b)
+
+    
