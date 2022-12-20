@@ -6,7 +6,7 @@
 # a) Добавьте игру против бота
 # b) Подумайте как наделить бота ""интеллектом""
 
-# два игрока
+# игрок и бот
 
 from random import randint
 
@@ -25,7 +25,7 @@ seq = randint(0,2)
 if seq:
     print(f"По жребьевке первый игрок 1")
 else:
-    print(f"По жребьевке первый игрок 2")
+    print(f"По жребьевке первый бот")
 
 count1 = 0 
 count2 = 0
@@ -38,13 +38,19 @@ while candies > 28:
         seq = False
         printgame('игрок 1', k, count1, candies)
     else:
-        k = get_candies('игрок 2')
+       # k = get_candies_bot('игрок 2')//
+        k=28
+        if candies <= 28:
+            k=candies
+        else:
+            if candies<55:
+                k=candies%28-1
         count2 += k
         candies -= k
         seq = True
-        printgame('игрок 2', k, count2, candies)
+        printgame('бот', k, count2, candies)
 
 if seq:
     print(f"Выиграл игрок 1")
 else:
-    print(f"Выиграл игрок 2")
+    print(f"Выиграл бот")
