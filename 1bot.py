@@ -20,7 +20,7 @@ def get_candies(name):
     return x
 
 
-candies = 101
+candies = 2021
 seq = randint(0,2)
 if seq:
     print(f"По жребьевке первый игрок 1")
