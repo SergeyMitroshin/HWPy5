@@ -31,7 +31,7 @@ count1 = 0
 count2 = 0
 
 while candies > 28:
-    if seq == True:
+    if seq:
         k = get_candies('игрок 1')
         count1 += k
         candies -= k

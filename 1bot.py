@@ -20,7 +20,7 @@ def get_candies(name):
     return x
 
 
-candies = 2021
+candies = 101
 seq = randint(0,2)
 if seq:
     print(f"По жребьевке первый игрок 1")
@@ -31,7 +31,7 @@ count1 = 0
 count2 = 0
 
 while candies > 28:
-    if seq == True:
+    if seq:
         k = get_candies('игрок 1')
         count1 += k
         candies -= k
@@ -47,8 +47,8 @@ while candies > 28:
                 k=candies%28-1
         if candies == 57:
             k=27
-        if candies == 57:
-            k=28
+        if candies == 56:
+            k=26
         count2 += k
         candies -= k
         seq = True
